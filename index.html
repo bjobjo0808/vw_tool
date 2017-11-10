@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VM TOOL</title>
+    <title>VW TOOL</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
@@ -14,32 +14,23 @@
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"></script>
-
 </head>
 <body>
 <div class="container">
-    <h2 class="form-signin-heading">VM TOOL</h2>
+    <h2 class="form-signin-heading">VW TOOL</h2>
     <label>BASE</label>
     <input type="text" id="base" class="form-control" placeholder="BASE WIDTH" required autofocus>
     <label>PX</label>
     <input type="text" id="px" class="form-control" placeholder="PX" required>
-    <h2 id="sum">NON</h2>
+    <h2 id="sum">-</h2>
     <button class="copy" data-clipboard-target="#sum">Copy on ClipBoard</button>
-
     <script>
         $("#px").keyup(function () {
             var base = $("#base").val();
             var px = $("#px").val();
             $("#sum").html(( (px / base) * 100).toFixed(2) + "vw");
         });
-
-        // クリップボード
         var clipboard = new Clipboard('.copy');
-        clipboard.on('success', function (e) {
-            e.clearSelection();
-            $('#tab-recipe').tab('show');
-            $().alert('close');
-        });
     </script>
 </body>
 </html>
